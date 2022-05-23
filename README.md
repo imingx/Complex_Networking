@@ -15,4 +15,31 @@
 
 ## 操作步骤
 
+1. 为Router15设置IP地址和配置OSPF协议
+  ```shell
+  sys
+  inter g 0/0/0
+  ip addr 10.2.3.15 24
+  inter g 0/0/1
+  ip addr 10.2.2.15 24
+  quit
+  router id 1.1.1.1
+  ospf
+  area 2
+  network 10.2.0.0 0.0.255.255
+  ```
+3. 同理，为Router16配置IP地址和配置OSPF协议
+  ```shell
+  sys
+  inter g 0/0/0
+  ip addr 10.2.2.16 24
+  inter g 0/0/1
+  ip addr 10.2.3.16 24
+  quit
+  router id 2.2.2.2
+  ospf
+  area 2
+  network 10.2.0.0 0.0.255.255
+  ```
 ## 遇到的技术问题及其解决方案
+- AR201型号的路由器无法配置ip地址，转而使用AR1220型号的
