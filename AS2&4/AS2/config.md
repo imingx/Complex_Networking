@@ -72,11 +72,11 @@ quit
 
 bgp 2
 group as2 internal
-peer 2.1.1.7 group as2
-peer 2.1.1.8 group as2
+peer 2.2.1.7 group as2
+peer 2.2.1.8 group as2
 peer 2.1.1.18 group as2
 peer as2 connect-interface LoopBack 0
-peer 200.0.0.234 as-number 3
+peer 200.0.0.234 as-number 4
 ```
 
 ## AR18
@@ -110,9 +110,9 @@ quit
 
 bgp 2
 group as2 internal
-peer 2.1.1.7 group as2
-peer 2.1.1.8 group as2
+peer 2.2.1.7 group as2
+peer 2.2.1.8 group as2
 peer 2.1.1.17 group as2
 peer as2 connect-interface LoopBack 0
-peer 200.0.0.230 as-number 3
+peer 200.0.0.230 as-number 4
 ```
