@@ -1,7 +1,7 @@
 #
-sysname ls9
+sysname ls10
 #
-router id 4.2.1.9
+router id 4.2.1.10
 #
 vlan batch 2 to 4
 #
@@ -27,13 +27,13 @@ aaa
 interface Vlanif1
 #
 interface Vlanif2
- ip address 200.4.0.249 255.255.255.0
+ ip address 200.4.0.250 255.255.255.0
 #
 interface Vlanif3
- ip address 200.4.2.9 255.255.255.0
+ ip address 200.4.3.10 255.255.255.0
 #
 interface Vlanif4
- ip address 200.4.4.9 255.255.255.0
+ ip address 200.4.5.10 255.255.255.0
 #
 interface MEth0/0/1
 #
@@ -98,12 +98,12 @@ interface GigabitEthernet0/0/24
 interface NULL0
 #
 interface LoopBack1
- ip address 192.168.4.9 255.255.255.255
+ ip address 192.168.4.10 255.255.255.255
 #
 ospf 1
  area 0.0.0.0
   network 200.4.0.0 0.0.255.255
-  network 192.168.4.9 0.0.0.0
+  network 192.168.4.10 0.0.0.0
 #
 user-interface con 0
 user-interface vty 0 4
