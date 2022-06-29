@@ -15,10 +15,12 @@ inter g 0/0/6
 port link-type access
 inter vlan 1
 ip addr 200.3.3.4 24
+ospf cost 5
 vlan 2
 port g 0/0/2
 inter vlan 2
 ip addr 200.3.5.4 24
+ospf cost 5
 vlan 3
 port g 0/0/3
 inter vlan 3
@@ -27,10 +29,11 @@ vlan 4
 port g 0/0/4
 inter vlan 4
 ip addr 200.3.9.4 24
+ospf cost 5
 vlan 5
 port g 0/0/5
 inter vlan 5
-ip addr 200.3.10.4 24
+ip addr 200.3.11.4 24
 vlan 6
 port g 0/0/6
 inter vlan 6

@@ -31,6 +31,7 @@ vlan 5
 port g 0/0/5
 inter vlan 5
 ip addr 200.3.10.3 24
+ospf cost 5
 vlan 6
 port g 0/0/6
 inter vlan 6

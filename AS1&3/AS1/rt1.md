@@ -5,8 +5,10 @@ sys
 sysn rt1
 inter g 0/0/0
 ip addr 200.1.2.1 24
+ospf cost 5
 inter g 0/0/1
 ip addr 200.1.3.1 24
+ospf cost 5
 inter g 0/0/2
 ip addr 10.0.0.253 30
 inter loop 0

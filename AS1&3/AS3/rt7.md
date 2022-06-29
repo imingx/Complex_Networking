@@ -7,6 +7,7 @@ inter g 0/0/0
 ip addr 200.3.4.7 24
 inter g 0/0/1
 ip addr 200.3.5.7 24
+ospf cost 5
 inter g 0/0/2
 ip addr 200.0.0.242 30
 inter l 0
