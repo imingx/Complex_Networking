@@ -48,3 +48,12 @@ network 200.3.10.3 0.0.0.255
 network 200.3.0.249 0.0.0.3
 network 192.168.3.3 0.0.0.0
 ```
+
+## smnp
+```
+snmp-agent group v3 buaa authentication
+snmp-agent usm-user v3 oto buaa authentication-mode sha abaracadabra
+snmp-agent trap source loop 1
+snmp-agent target-host trap address udp-domain 192.168.0.1 params securityname buaa
+snmp-agent trap enable
+```

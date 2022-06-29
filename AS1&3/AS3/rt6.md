@@ -57,3 +57,12 @@ network 192.168.3.14 32
 aggregate 192.168.3.0 24 detail-suppressed
 quit
 ```
+
+## smnp
+```
+snmp-agent trap source loop 1
+snmp-agent group v3 buaa authentication
+snmp-agent usm-user v3 oto buaa authentication-mode sha abaracadabra
+snmp-agent target-host trap-hostname nym address 192.168.0.1 trap-paramsname buaa
+snmp-agent trap enable
+```

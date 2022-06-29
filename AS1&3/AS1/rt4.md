@@ -42,3 +42,12 @@ peer as1 connect-interface LoopBack 0
 peer 200.0.0.242 as-number 3
 network 172.16.1.2 24
 ```
+
+## smnp
+```
+snmp-agent trap source loop 1
+snmp-agent group v3 buaa authentication
+snmp-agent usm-user v3 oto buaa authentication-mode sha abaracadabra
+snmp-agent target-host trap-hostname nym address 192.168.0.1 trap-paramsname buaa
+snmp-agent trap enable
+```
