@@ -17,4 +17,6 @@
 
 - 路由器E口无法配置ip地址，建议使用AR2200型号（有两个GE口能配置ip addr）
 - E口要配置IP地址需要通过vlan实现
+- 可以使用2E1-F扩展卡为路由器提供E1端口
+- PC机-设置-命令行里可以运行ping
 - 很多指令可以在[华为AR系列路由器配置手册](https://support.huawei.com/hedex/hdx.do?docid=EDOC1100021771&lang=zh&idPath=24030814|21782164|7923148|22318710|6078836)上查到
