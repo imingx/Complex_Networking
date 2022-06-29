@@ -30,3 +30,8 @@ peer 3.1.1.7 group as3
 peer 3.1.1.8 group as3
 peer as3 connect-interface LoopBack 0
 ```
+
+## ebgp
+```
+peer 200.0.0.245 as-number 1
+```

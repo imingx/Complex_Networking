@@ -17,7 +17,7 @@ ospf
 area 0
 network 200.1.2.5 0.0.0.255
 network 200.1.3.5 0.0.0.255
-peer 200.0.0.238 as-number 3
+network 1.1.1.5 0.0.0.0
 quit
 quit
 ```
@@ -26,9 +26,15 @@ quit
 ```
 bgp 1
 group as1 internal
-peer 1.1.1.1 group as1
-peer 1.1.1.2 group as1
+peer 1.1.2.1 group as1
+peer 1.1.2.2 group as1
 peer 1.1.1.3 group as1
 peer 1.1.1.4 group as1
 peer as1 connect-interface LoopBack 0
+```
+
+## ebgp
+```
+peer 200.0.0.238 as-number 3
+network 172.16.1.2 24
 ```
