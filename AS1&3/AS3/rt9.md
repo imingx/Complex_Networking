@@ -9,12 +9,15 @@ ip addr 200.3.8.9 24
 inter g 0/0/1
 ip addr 200.3.9.9 24
 router id 3.1.1.9
+inter l 1
+ip addr 192.168.3.9 32
 ospf
 area 0
 network 200.3.8.9 0.0.0.255
 network 200.3.9.9 0.0.0.255
 network 200.3.12.253 0.0.0.3
 network 200.3.13.249 0.0.0.3
+network 192.168.3.9 0.0.0.0
 quit
 quit
 ```

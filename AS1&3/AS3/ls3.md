@@ -36,6 +36,8 @@ port g 0/0/6
 inter vlan 6
 ip addr 200.3.0.249 30
 router id 3.2.1.3
+inter loop 1
+ip addr 192.168.3.3 24
 ospf
 area 0
 network 200.3.2.3 0.0.0.255
@@ -44,4 +46,5 @@ network 200.3.6.3 0.0.0.255
 network 200.3.8.3 0.0.0.255
 network 200.3.10.3 0.0.0.255
 network 200.3.0.249 0.0.0.3
+network 192.168.3.3 0.0.0.0
 ```

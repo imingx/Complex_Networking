@@ -11,6 +11,8 @@ inter g 0/0/2
 ip addr 200.0.0.246 30
 inter l 0
 ip addr 3.1.1.6 32
+inter l 1
+ip addr 192.168.3.6 24
 quit
 router id 3.1.1.6
 ospf
@@ -18,6 +20,8 @@ area 0
 network 200.3.2.6 0.0.0.255
 network 200.3.3.6 0.0.0.255
 network 3.1.1.6 0.0.0.0
+network 192.168.3.6 0.0.0.0
+import-route bgp
 quit
 quit
 ```
@@ -34,4 +38,22 @@ peer as3 connect-interface LoopBack 0
 ## ebgp
 ```
 peer 200.0.0.245 as-number 1
+network 200.3.16.1 24
+network 200.3.17.1 24
+network 200.3.18.1 24
+network 200.3.19.1 24
+aggregate 200.3.16.0 255.255.252.0 detail-suppressed
+network 192.168.3.3 32
+network 192.168.3.4 32
+network 192.168.3.6 32
+network 192.168.3.7 32
+network 192.168.3.8 32
+network 192.168.3.9 32
+network 192.168.3.10 32
+network 192.168.3.11 32
+network 192.168.3.12 32
+network 192.168.3.13 32
+network 192.168.3.14 32
+aggregate 192.168.3.0 24 detail-suppressed
+quit
 ```
