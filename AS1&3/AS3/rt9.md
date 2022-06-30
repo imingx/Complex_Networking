@@ -8,6 +8,7 @@ inter g 0/0/0
 ip addr 200.3.8.9 24
 inter g 0/0/1
 ip addr 200.3.9.9 24
+ospf cost 5
 router id 3.1.1.9
 inter l 1
 ip addr 192.168.3.9 32
