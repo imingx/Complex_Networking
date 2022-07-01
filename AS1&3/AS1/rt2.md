@@ -8,7 +8,7 @@ ip addr 200.1.2.2 24
 inter g 0/0/1
 ip addr 200.1.3.2 24
 inter g 0/0/2
-ip addr 10.0.0.249 30
+ip addr 200.0.0.249 30
 inter loop 0
 ip addr 1.1.1.2 32
 inter loop 1
@@ -16,6 +16,7 @@ ip addr 192.168.1.2 32
 quit
 router id 1.1.1.2
 ospf
+preference ase 200
 area 0
 network 200.1.2.2 0.0.0.255
 network 200.1.3.2 0.0.0.255
@@ -34,11 +35,12 @@ peer 1.1.1.3 group as1
 peer 1.1.1.4 group as1
 peer 1.1.1.5 group as1
 peer as1 connect-interface LoopBack 0
+peer as1 next-hop-local
 ```
 
 ## ebgp
 ```
-peer 200.0.0.250 as-number 3
+peer 200.0.0.250 as-number 2
 network 172.16.1.2 24
 network 172.16.1.2 24
 network 192.168.1.2 32
@@ -48,7 +50,19 @@ network 192.168.1.100 32
 network 192.168.1.129 32
 network 192.168.1.130 32
 aggregate 192.168.1.0 24 detail-suppressed
-network 192.168.3.0 24
+network 200.3.114.1 32
+preference 255 110 110 
+quit
+```
+
+### bgp route select
+```
+ip ip-prefix voice2 p 200.4.125.1 32
+route-policy vp2 p n 10
+if-match ip-prefix voice2
+apply local-pref 200
+bgp 1
+peer 200.0.0.250 route-policy vp2 import
 quit
 ```
 

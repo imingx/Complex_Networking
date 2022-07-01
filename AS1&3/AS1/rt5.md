@@ -16,6 +16,7 @@ ip addr 192.168.1.5 32
 quit
 router id 1.1.1.5
 ospf
+preference ase 200
 area 0
 network 200.1.2.5 0.0.0.255
 network 200.1.3.5 0.0.0.255
@@ -35,12 +36,25 @@ peer 1.1.1.2 group as1
 peer 1.1.1.3 group as1
 peer 1.1.1.4 group as1
 peer as1 connect-interface LoopBack 0
+peer as1 next-hop-local
+preference 255 110 110 
 ```
 
 ## ebgp
 ```
 peer 200.0.0.238 as-number 3
 network 172.16.1.2 24
+```
+
+### bgp route select
+```
+ip ip-prefix voice2 p 200.4.125.1 32
+route-policy vp2 p n 10
+if-match ip-prefix voice2
+apply local-pref 200
+bgp 1
+peer 200.0.0.250 route-policy vp2 import
+quit
 ```
 
 ## smnp

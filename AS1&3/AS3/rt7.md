@@ -7,7 +7,6 @@ inter g 0/0/0
 ip addr 200.3.4.7 24
 inter g 0/0/1
 ip addr 200.3.5.7 24
-ospf cost 5
 inter g 0/0/2
 ip addr 200.0.0.242 30
 inter l 0
@@ -17,6 +16,7 @@ ip addr 192.168.3.7 32
 quit
 router id 3.1.1.7
 ospf
+preference ase 200
 area 0
 network 200.3.4.7 0.0.0.255
 network 200.3.5.7 0.0.0.255
@@ -34,6 +34,7 @@ group as3 internal
 peer 3.1.1.6 group as3
 peer 3.1.1.8 group as3
 peer as3 connect-interface LoopBack 0
+peer as3 next-hop-local
 ```
 
 ## ebgp
@@ -56,6 +57,7 @@ network 192.168.3.12 32
 network 192.168.3.13 32
 network 192.168.3.14 32
 aggregate 192.168.3.0 24 detail-suppressed
+network 200.3.114.1 32
 
 ```
 
